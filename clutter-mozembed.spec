@@ -38,7 +38,7 @@ NOCONFIGURE=1 ./autogen.sh
 rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang clutter-mozembed  || echo -n >> clutter-mozembed.lang
+%find_lang %{name}
 
 mkdir -p %{buildroot}/%{_datadir}/doc/%{name}-%{version}
 for f in `ls %{buildroot}/%{_datadir}/doc/`; do
@@ -50,7 +50,7 @@ done
 %clean
 rm -rf %{buildroot}
 
-%files -f clutter-mozembed.lang
+%files -f %{name}.lang
 %defattr(-,root,root,-)
 %{_bindir}/clutter-mozheadless
 %exclude %{_libdir}/libcluttermozembed.la
