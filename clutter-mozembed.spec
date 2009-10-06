@@ -1,6 +1,6 @@
 Name: clutter-mozembed
 Summary: Clutter mozembed
-Group: Applications/Internet
+Group: Networking/WWW
 Version: 0.10.3
 License: LGPL
 URL: http://www.moblin.org
@@ -20,7 +20,7 @@ Widget to enable embedding of mozilla browser in your clutter applications
 %package devel
 
 Summary: Development libraries for %{name}
-Group: Development/Libraries
+Group: Development/Other
 
 Requires: %{name} = %{version}-%{release}
 
