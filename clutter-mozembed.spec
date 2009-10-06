@@ -23,8 +23,6 @@ Summary: Development libraries for %{name}
 Group: Development/Libraries
 
 Requires: %{name} = %{version}-%{release}
-Requires: pkgconfig
-Requires: %{name} >= %{version}
 
 %description devel
 Development environment for using clutter mozembed
