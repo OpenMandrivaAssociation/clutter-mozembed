@@ -55,13 +55,17 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%{_bindir}/clutter-mozheadless
-%exclude %{_libdir}/libcluttermozembed.la
-%{_libdir}/libcluttermozembed.so.*
-%{_datadir}/cluttermozembed
+%{_libdir}/clutter-mozheadless
+%{_libdir}/lib%{name}-*.so.*
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*.rdf
+%dir %{_datadir}/%{name}/chrome
+%{_datadir}/%{name}/chrome/*
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}/cluttermozembed/*.h
-%{_libdir}/libcluttermozembed.so
-%{_libdir}/pkgconfig/cluttermozembed.pc
+%dir %{_includedir}/clutter*/%{name}
+%{_includedir}/clutter*/%{name}/*.h
+%{_libdir}/lib%{name}-*.so
+%{_libdir}/lib%{name}-*.la
+%{_libdir}/pkgconfig/%{name}-*.pc
