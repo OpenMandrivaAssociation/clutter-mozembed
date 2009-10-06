@@ -19,6 +19,7 @@ BuildRequires: libgtk+2-devel
 BuildRequires: mozilla-headless-services-devel
 BuildRequires: gnome-common
 BuildRequires: xulrunner-headless-devel
+BuildRequires: zip
 
 %description
 Widget to enable embedding of mozilla browser in your clutter applications
