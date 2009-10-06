@@ -35,11 +35,11 @@ Development environment for using clutter mozembed
 ./autogen.sh
 %configure --enable-plugins --disable-static
 export LD_AS_NEEDED=1
-make %{?_smp_mflags}
+%make
 
 %install
 rm -rf %{buildroot}
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="%{__install} -p"
+%makeinstall_std
 
 %find_lang clutter-mozembed  || echo -n >> clutter-mozembed.lang
 
