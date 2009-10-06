@@ -35,7 +35,7 @@ Widget to enable embedding of mozilla browser in your clutter applications
 %package -n %{develname}
 Summary: Development libraries for %{name}
 Group: Development/Other
-Requires: %{name} = %{version}-%{release}
+Requires: %{libname} = %{version}-%{release}
 
 %description -n %{develname}
 Development environment for using clutter mozembed
