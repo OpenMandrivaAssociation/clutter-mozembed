@@ -32,7 +32,7 @@ Development environment for using clutter mozembed
 %setup -q -n clutter-mozembed-%{version}
 
 %build
-./autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 %configure --enable-plugins --disable-static
 %make
 
