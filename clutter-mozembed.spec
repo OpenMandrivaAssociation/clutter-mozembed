@@ -34,7 +34,6 @@ Development environment for using clutter mozembed
 %build
 ./autogen.sh
 %configure --enable-plugins --disable-static
-export LD_AS_NEEDED=1
 %make
 
 %install
