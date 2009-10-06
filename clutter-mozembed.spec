@@ -53,14 +53,6 @@ done
 %clean
 rm -rf %{buildroot}
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
-%post devel -p /sbin/ldconfig
-
-%postun devel -p /sbin/ldconfig
-
 %files -f clutter-mozembed.lang
 %defattr(-,root,root,-)
 %{_bindir}/clutter-mozheadless
