@@ -1,3 +1,7 @@
+%define major		0
+%define libname		%mklibname %{name} %{major}
+%define develname	%mklibname %{name} -d
+
 Name: clutter-mozembed
 Summary: Clutter mozembed
 Group: Networking/WWW
@@ -18,14 +22,21 @@ BuildRequires: xulrunner-headless-devel
 
 %description
 Widget to enable embedding of mozilla browser in your clutter applications
-%package devel
 
+%package -n %{libname}
+Summary: Clutter mozembed library
+Group: System/Libraries
+Requires: %{name}
+
+%description -n %{libname}
+Widget to enable embedding of mozilla browser in your clutter applications
+
+%package -n %{develname}
 Summary: Development libraries for %{name}
 Group: Development/Other
-
 Requires: %{name} = %{version}-%{release}
 
-%description devel
+%description -n %{develname}
 Development environment for using clutter mozembed
 
 %prep
@@ -56,13 +67,16 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %{_libdir}/clutter-mozheadless
-%{_libdir}/lib%{name}-*.so.*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.rdf
 %dir %{_datadir}/%{name}/chrome
 %{_datadir}/%{name}/chrome/*
 
-%files devel
+%files -n %{libname}
+%defattr(-,root,root,-)
+%{_libdir}/lib%{name}-*.so.%{major}*
+
+%files -n %{develname}
 %defattr(-,root,root,-)
 %dir %{_includedir}/clutter*/%{name}
 %{_includedir}/clutter*/%{name}/*.h
