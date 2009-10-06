@@ -6,6 +6,7 @@ License: LGPL
 URL: http://www.moblin.org
 Release: %mkrel 1
 Source0: %{name}-%{version}.tar.gz
+Patch0: moblin-repack.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: clutter-devel
@@ -26,8 +27,10 @@ Requires: %{name} = %{version}-%{release}
 
 %description devel
 Development environment for using clutter mozembed
+
 %prep
 %setup -q -n clutter-mozembed-%{version}
+%patch0 -p1 -b .moblin-repack
 
 %build
 NOCONFIGURE=1 ./autogen.sh
