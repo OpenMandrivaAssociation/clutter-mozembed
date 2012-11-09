@@ -1,0 +1,25 @@
+diff -pu -r clutter-mozembed-0.10.2/configure.ac new/configure.ac
+--- clutter-mozembed-0.10.2/configure.ac	2009-08-13 11:31:26.000000000 +0100
++++ new/configure.ac	2009-08-13 18:02:23.000000000 +0100
+@@ -49,7 +49,7 @@ AM_CONDITIONAL([SUPPORT_IM], [test "x$EN
+ PKG_CHECK_MODULES(GOBJECT, gobject-2.0 >= 2.12.0 gio-2.0)
+ PKG_CHECK_MODULES(GTHREAD, gthread-2.0)
+ PKG_CHECK_MODULES(CLUTTER, clutter-1.0 >= 1.0.0)
+-PKG_CHECK_MODULES(MOZILLA, mozilla-js mozilla-headless >= 1.9.2a1pre)
++PKG_CHECK_MODULES(MOZILLA, mozilla-js-headless mozilla-headless >= 1.9.2a1pre)
+ PKG_CHECK_MODULES(MHS, mhs-1.0 >= 0.10.4)
+ 
+ MOZHOME=`${PKG_CONFIG} --variable=prefix mozilla-headless`"/lib/xulrunner-"`${PKG_CONFIG} --modversion mozilla-headless`
+diff -ruN clutter-mozembed-0.10.4.old/clutter-mozembed.pc.in clutter-mozembed-0.10.4/clutter-mozembed.pc.in
+--- clutter-mozembed-0.10.4.old/clutter-mozembed.pc.in	2009-10-25 18:49:32.000000000 -0400
++++ clutter-mozembed-0.10.4/clutter-mozembed.pc.in	2009-10-29 14:21:49.000000000 -0400
+@@ -7,7 +7,7 @@
+ 
+ Name: clutter-mozembed
+ Description: A Clutter actor that embeds Mozilla
+-Requires: clutter-${clutter_api_version} mozilla-js mozilla-headless
++Requires: clutter-${clutter_api_version} mozilla-js-headless mozilla-headless
+ Version: @VERSION@
+ Libs: -L${libdir} -lclutter-mozembed-${cme_api_version}
+ Cflags: -I${includedir}/clutter-${clutter_api_version}
+
