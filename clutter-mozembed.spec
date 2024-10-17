@@ -7,7 +7,7 @@ Summary: Clutter mozembed
 Group: Networking/WWW
 Version: 0.10.5
 License: LGPL
-URL: http://www.moblin.org
+URL: https://www.moblin.org
 Release: %mkrel 2
 Source0: %{name}-%{version}.tar.gz
 Patch0: moblin-repack.patch
